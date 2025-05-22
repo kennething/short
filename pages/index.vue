@@ -80,7 +80,6 @@ async function createLink() {
 
   loading.value = true;
   generatedLink.value = undefined;
-  if (!inputs.url.startsWith("http://") || !inputs.url.startsWith("https://")) inputs.url = `https://${inputs.url}`;
 
   const code = generateCode();
   const exists = await checkCode(code);
