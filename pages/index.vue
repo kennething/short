@@ -126,7 +126,7 @@ function copyToClipboard() {
   if (!generatedLink.value) return;
 
   navigator.clipboard.writeText(`${config.public.baseUrl}/${generatedLink.value.short}`);
-  activeToasts.value.push(new Toast("error", "Copied to clipboard!"));
+  activeToasts.value.push(new Toast("success", "Copied to clipboard!"));
 }
 </script>
 
