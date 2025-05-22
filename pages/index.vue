@@ -24,12 +24,12 @@
 
     <form @submit.prevent="createLink" class="flex flex-col items-center justify-center gap-4">
       <div class="flex items-center justify-center gap-4 bg-neutral-100 px-5 py-3 rounded-xl hover:bg-neutral-200 transition focus-within:bg-neutral-200">
-        <img class="size-5" src="/web.svg" aria-hidden="true" />
+        <img class="size-5 select-none" draggable="false" src="/web.svg" aria-hidden="true" />
         <input class="focus:outline-0 w-64 sm:w-96" type="text" v-model="inputs.url" placeholder="https://" />
       </div>
 
       <div class="flex mx-4 sm:mx-auto items-center flex-wrap sm:flex-nowrap justify-center bg-neutral-100 pl-5 rounded-xl">
-        <img class="size-5 mr-4" src="/calendar.svg" aria-hidden="true" />
+        <img class="size-5 mr-4 select-none" draggable="false" src="/calendar.svg" aria-hidden="true" />
         <button
           v-for="(option, hours) in expirationDates"
           class="py-3 px-3 last:pr-4 last:rounded-r-xl hover:bg-neutral-200 transition cursor-pointer"
