@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  * {
+    font-family: "Chewy", systme-ui;
+  }
+
+  html {
+    background-color: #fefefe;
+  }
+}
+
+button {
+  touch-action: manipulation;
+}
