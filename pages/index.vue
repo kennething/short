@@ -12,7 +12,7 @@
         <h3 class="text-3xl font-medium mb-6">All done!</h3>
 
         <div class="flex items-center justify-center gap-2">
-          <p class="text-xl">{{ config.public.baseUrl }}/{{ generatedLink.short }}</p>
+          <p class="text-xl">{{ baseUrl }}/{{ generatedLink.short }}</p>
           <button class="size-9 p-2 hover:bg-green-100 transition rounded-full cursor-pointer" type="button" @click="copyToClipboard">
             <img class="size-5" src="/copy.svg" aria-hidden="true" />
           </button>
@@ -50,9 +50,10 @@
 <script setup lang="ts">
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
-const config = useRuntimeConfig();
 const globalStore = useGlobalStore();
 const { activeToasts } = storeToRefs(globalStore);
+
+const baseUrl = computed(() => window?.location.origin);
 
 const expirationDates = {
   1: "1 hour",
@@ -125,7 +126,7 @@ async function checkCode(code: string) {
 function copyToClipboard() {
   if (!generatedLink.value) return;
 
-  navigator.clipboard.writeText(`${config.public.baseUrl}/${generatedLink.value.short}`);
+  navigator.clipboard.writeText(`${baseUrl.value}/${generatedLink.value.short}`);
   activeToasts.value.push(new Toast("success", "Copied to clipboard!"));
 }
 </script>

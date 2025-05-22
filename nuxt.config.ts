@@ -9,20 +9,15 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  runtimeConfig: {
-    public: {
-      baseUrl: "",
-    },
-  },
   app: {
     head: {
-      title: "Short(ener)",
+      title: "Short.",
       meta: [
         { charset: "UTF-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1.0" },
         { name: "mobile-web-app-capable", content: "yes" },
         { name: "author", content: "Kenneth Ng" },
-        { property: "og:title", content: "Short(ener)" },
+        { property: "og:title", content: "Short." },
         { property: "og:site_name", content: "Kenneth Ng" },
         { property: "og:type", content: "website" },
         { name: "description", content: "no tracking or anything. not a scam, or a sham, or spam. just a URL shortener." },
