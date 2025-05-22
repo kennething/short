@@ -90,7 +90,7 @@ async function createLink() {
     long: inputs.url,
     short: code,
     createdAt: Date.now(),
-    expiresAt: inputs.expires === 0 ? null : Date.now() + inputs.expires! * 60 * 60 * 1000,
+    expiresAt: Number(inputs.expires) === 0 ? null : Date.now() + inputs.expires! * 60 * 60 * 1000,
   };
 
   const { error } = await tryCatch(setDoc(doc(db, "links", code), link));
