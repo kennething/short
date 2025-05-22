@@ -28,6 +28,7 @@ export default defineNuxtConfig({
         { name: "description", content: "no tracking or anything. not a scam, or a sham, or spam. just a URL shortener." },
         { property: "og:description", content: "no tracking or anything. not a scam, or a sham, or spam. just a URL shortener." },
       ],
+      link: [{ rel: "icon", type: "image/png", href: "/ruler.png" }],
       htmlAttrs: {
         lang: "en",
       },
